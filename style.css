@@ -14,7 +14,8 @@ html {
     --input-background-color: #F4FAFA;
 
     --border-radius-large: 20px;
-    --border-radius-small: 7px
+    --border-radius-small: 7px;
+
 
 }
 
@@ -26,12 +27,14 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    min-width: 320px;
 }
 
 main {
     width: max(40%, 768px);
     margin: auto;
     background-color: var(--main-bg-color);
+    
 }
 
 .container {
@@ -39,6 +42,7 @@ main {
     grid-template-columns: 1fr 1fr;
     border-radius: var(--border-radius-large);
     padding: 50px;
+    min-width: 320px;
 }
 
 #tip-inputs {
@@ -46,6 +50,7 @@ main {
     flex-direction: column;
     justify-content: space-around;
     margin-right: 30px;
+
     
 }
 
@@ -56,7 +61,7 @@ main {
 }
 
 #num-people-container {
-    margin-bottom: 0px;
+    margin-bottom: 20px;
 }
 
 /* Eliminate arrows on numeric inputs */
@@ -78,7 +83,8 @@ input[type=number] {
     color: var(--main-accent-color);
     background-color: var(--input-background-color);
     border-radius: var(--border-radius-small);
-    padding: 3px;
+    border: none;
+    padding: 6px;
 }
 
 .input-group>input:focus {
@@ -110,4 +116,76 @@ input[type=number] {
     color: var(--main-bg-color);
 }
 
+#tip-output {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    background-color: var(--main-accent-color);
+    color: var(--main-bg-color);
+    padding: 10px 30px 10px 30px;
+    border-radius: var(--border-radius-large);
+}
 
+.tip-result-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: large;
+}
+
+p.per-person {
+    margin: 15px 10px;
+    color: gray;
+}
+
+.tip-result-container>p.result {
+    color: var(--main-lighter-accent-color);
+    font-size: xx-large;
+    line-height: 2;
+}
+
+#tip-output>button[type=reset] {
+    background-color: var(--main-lighter-accent-color);
+    color: var(--main-accent-color);
+    padding: 5px 0 5px 0;
+    border-radius: var(--border-radius-small);
+    font-size: x-large;
+    margin-bottom: 10px;
+}
+
+button {
+    border: none;
+}
+
+
+@media (max-width: 600px) {
+    .container {
+        grid-template-columns: 1fr;
+        width: 100vw;
+        height: 100vh;
+        padding: 30px;
+    }
+    #tip-inputs {
+        margin-right: 0;
+    }
+    #tip-output {
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+
+    #tip-button-container {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .tip-result-container>p.result {
+        color: var(--main-lighter-accent-color);
+        font-size: x-large;
+        line-height: 2;
+    }
+
+    #tip-output>button[type=reset] {
+        margin-bottom: 0;
+        margin-top: 10px;
+    }
+
+}
