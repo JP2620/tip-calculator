@@ -3,5 +3,111 @@
     margin: 0;
     padding: 0;
     font-family: monospace;
+    font-weight: 550;
   }
+
+html {
+    --bg-color: #C5E4E7;
+    --main-bg-color: #FFFFFF;
+    --main-accent-color: #00494D;
+    --main-lighter-accent-color: #20A291;
+    --input-background-color: #F4FAFA;
+
+    --border-radius-large: 20px;
+    --border-radius-small: 7px
+
+}
+
+body {
+    background-color: var(--bg-color);
+    font-size: x-large;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+main {
+    width: max(40%, 768px);
+    margin: auto;
+    background-color: var(--main-bg-color);
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border-radius: var(--border-radius-large);
+    padding: 50px;
+}
+
+#tip-inputs {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-right: 30px;
+    
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+#num-people-container {
+    margin-bottom: 0px;
+}
+
+/* Eliminate arrows on numeric inputs */
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.input-group>input {
+    font-size: x-large;
+    line-height: 1.5;
+    color: var(--main-accent-color);
+    background-color: var(--input-background-color);
+    border-radius: var(--border-radius-small);
+    padding: 3px;
+}
+
+.input-group>input:focus {
+    border-color: var(--main-lighter-accent-color);
+}
+
+.input-group>label {
+    margin: 10px 0 10px 0;
+}
+
+#tip-percentage-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+#tip-button-container {
+    margin-top: 10px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 10px;
+}
+
+#tip-button-container>button {
+    font-size: xx-large;
+    padding: 5px;
+    border-radius: var(--border-radius-small);
+    background-color: var(--main-accent-color);
+    color: var(--main-bg-color);
+}
+
 

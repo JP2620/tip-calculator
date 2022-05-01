@@ -11,36 +11,58 @@
 
   <body>
     <main class="container">
-      <div id="tip-inputs">
-        <div id="bill-container">
-          <label for="bill-amount">Bill</label>
-          <input
-            type="number"
-            placeholder="0"
-            min="0"
-            dir="rtl"
-            name="bill-amount"
-            id="bill-amount"
-          />
+        <div id="tip-inputs">
+            <div class="input-group" id="bill-container">
+                <label for="bill-amount">Bill</label>
+                <input
+                    type="number"
+                    placeholder="0"
+                    min="0"
+                    dir="rtl"
+                    name="bill-amount"
+                    id="bill-amount"
+                >
+                </input>
+            </div>
+            <div id="tip-percentage-container">
+                <label for="">Select Tip %</label>
+                <div id="tip-button-container">
+                    <button>5%</button>
+                    <button>10%</button>
+                    <button>15%</button>
+                    <button>25%</button>
+                    <button>50%</button>
+                    <button>Custom</button>
+                </div>
+            </div>
+            <div class="input-group" id="num-people-container">
+                <label for="">Number of People</label>
+                <input 
+                type="number"
+                placeholder="0"
+                min="0"
+                dir="rtl"
+                name="people-amount"
+                id="people-amount" />
+            </div>
         </div>
-        <div id="tip-percentage-container">
-          <label for="">Select Tip %</label>
-          <div id="tip-button-container">
-            <button>5%</button>
-            <button>10%</button>
-            <button>15%</button>
-            <button>25%</button>
-            <button>50%</button>
-            <button>
-              <input type="number" min="0" placeholder="Custom" />
-            </button>
-          </div>
+        <div id="tip-output">
+            <div id="tip-amount">
+                <div id="tip-amount-person">
+                    <p>Tip Amount</p>
+                    <p>/ person</p>
+                </div>
+                <p>$ 0.00</p>
+            </div>
+            <div id="total-amount">
+                <div id="total-amount-person">
+                    <p>Total Amount</p>
+                    <p>/ person</p>
+                </div>
+                <p>$ 0.00</p>
+            </div>
+            <button type="reset">RESET</button>
         </div>
-        <div id="num-people-container">
-          <label for="">Number of People</label>
-          <input type="number" />
-        </div>
-      </div>
     </main>
   </body>
 </html>
