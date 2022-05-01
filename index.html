@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tipping Calculator</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="index.js"></script>
+  </head>
+
+  <body>
+    <main class="container">
+      <div id="tip-inputs">
+        <div id="bill-container">
+          <label for="bill-amount">Bill</label>
+          <input
+            type="number"
+            placeholder="0"
+            min="0"
+            dir="rtl"
+            name="bill-amount"
+            id="bill-amount"
+          />
+        </div>
+        <div id="tip-percentage-container">
+          <label for="">Select Tip %</label>
+          <div id="tip-button-container">
+            <button>5%</button>
+            <button>10%</button>
+            <button>15%</button>
+            <button>25%</button>
+            <button>50%</button>
+            <button>
+              <input type="number" min="0" placeholder="Custom" />
+            </button>
+          </div>
+        </div>
+        <div id="num-people-container">
+          <label for="">Number of People</label>
+          <input type="number" />
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
