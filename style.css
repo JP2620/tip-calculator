@@ -11,7 +11,7 @@ html {
     --bg-color: #C5E4E7;
     --main-bg-color: #FFFFFF;
     --main-accent-color: #00494D;
-    --main-lighter-accent-color: #20A291;
+    --main-lighter-accent-color: #26C2AD;
     --input-background-color: #F4FAFA;
     --input-icon-color: #9EBBBD;
     --text-color: hsl(184, 14%, 56%);
@@ -32,7 +32,7 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
     min-width: 320px;
     color: var(--text-color);
@@ -40,7 +40,7 @@ body {
 
 main {
     width: max(50%, 768px);
-    margin: auto;
+    margin: auto, 0;
     background-color: var(--main-bg-color);
 }
 
@@ -89,13 +89,12 @@ form {
     text-align: right;
 }
 
-.input-icons i {
+.input-icons img {
     position:absolute;
 }
 .icon {
-    padding: 10px;
+    padding: 15px;
     color: var(--input-icon-color);
-    min-width: 50px;
     text-align: center
 }
 
@@ -111,6 +110,7 @@ form {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    margin: 25px 0;
 }
 
 #tip-button-container {
@@ -118,6 +118,7 @@ form {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 10px;
+
 }
 
 #tip-button-container>button {
@@ -135,9 +136,10 @@ form {
 }
 
 #custom-tip-input {
-    padding: 0 0 0 5px ;
+    padding: 0 5px ;
     height: 100%;
     width: 100%;
+    font-size: 14px;
     color: var(--main-accent-color);
     border-radius: var(--border-radius-small);
     background-color: var(--input-background-color);
@@ -178,10 +180,16 @@ input:focus {
     font-size: var(--font-size-small);
 }
 
+div.per-person {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
 p.per-person {
-    margin: 15px 0px;
+    margin: 0px 0px;
     font-size: x-small;
-    color: gray;
+    color: hsl(186, 14%, 43%);
 }
 
 .tip-result-container>p.result {
@@ -195,8 +203,7 @@ p.per-person {
     color: var(--main-accent-color);
     padding: 5px 0 5px 0;
     border-radius: var(--border-radius-small);
-    font-size: x-large;
-    margin-bottom: 10px;
+    font-size: var(--font-size-medium);
 }
 
 button {
@@ -207,6 +214,10 @@ button {
 
 
 @media (max-width: 600px) {
+
+    header {
+        margin: 50px 0;
+    }
 
     .container {
         width: 100vw;

@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tipping Calculator</title>
+    <title>Tip Calculator</title>
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet"
           href=
@@ -14,13 +14,14 @@
   </head>
 
   <body>
+    <header><img src="images/logo.svg" alt=""></header>
     <main class="container">
         <form>
             <div id="tip-inputs">
                 <div class="input-group" id="bill-container">
                     <label for="bill-amount">Bill</label>
                     <div class="input-icons">
-                        <i class="fa fa-usd icon"></i>
+                        <img class="icon" src="images/icon-dollar.svg"></i>
                         <input
                         type="text"
                         placeholder="0"
@@ -49,7 +50,7 @@
                 <div class="input-group" id="num-people-container">
                     <label for="">Number of People</label>
                     <div class="input-icons">
-                        <i class="fa fa-user icon"></i>
+                        <img class="icon" src="images/icon-person.svg"></i>
                         <input 
                         type="text"
                         placeholder="1"
@@ -63,14 +64,14 @@
             </div>
             <div id="tip-output">
                 <div class="tip-result-container" id="tip-amount">
-                    <div id="tip-amount-person">
+                    <div class="per-person" id="tip-amount-person">
                         <p>Tip Amount</p>
                         <p class="per-person">/ person</p>
                     </div>
                     <p id="tip-per-person" class="result">$ 0.00</p>
                 </div>
                 <div class="tip-result-container" id="total-amount">
-                    <div id="total-amount-person">
+                    <div class="per-person" id="total-amount-person">
                         <p>Total</p>
                         <p class="per-person">/ person</p>
                     </div>
