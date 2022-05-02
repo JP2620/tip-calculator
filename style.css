@@ -1,9 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Azeret+Mono&display=swap');
+
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: monospace;
-    font-weight: 550;
+    font-family: 'Azeret Mono', monospace;
+    font-weight: 700;
   }
 
 html {
@@ -15,7 +17,11 @@ html {
     --input-icon-color: #9EBBBD;
 
     --border-radius-large: 20px;
-    --border-radius-small: 7px;
+    --border-radius-small: 5px;
+
+    --font-size-large: 24px;
+    --font-size-medium: 18px;
+    --font-size-small: 14px;
 
 
 }
@@ -114,7 +120,7 @@ form {
 }
 
 #tip-button-container>button {
-    font-size: xx-large;
+    font-size: var(--font-size-large);
     padding: 5px;
     border-radius: var(--border-radius-small);
     background-color: var(--main-accent-color);
@@ -135,7 +141,7 @@ form {
     border-radius: var(--border-radius-small);
     background-color: var(--input-background-color);
     border: none;
-    font-size: xx-large;
+    font-size: var(--font-size-large);
     text-align: center;
 }
 
@@ -168,11 +174,12 @@ input:focus {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    font-size: large;
+    font-size: var(--font-size-small);
 }
 
 p.per-person {
-    margin: 15px 10px;
+    margin: 15px 0px;
+    font-size: x-small;
     color: gray;
 }
 
