@@ -72,7 +72,6 @@ document.onreadystatechange = function () {
         billInput.addEventListener("input", handleBillChange);
         peopleAmountInput.addEventListener("input", handlePeopleAmountChange);
         resetButton.addEventListener("click", handleReset);
-        customTipButton.addEventListener("click", (e) => e.preventDefault())
         customTipInput.addEventListener("input", (e) => {
             tipPercentage = e.target.value === "" ? 0 : parseFloat(e.target.value);
             Array.from(tipButtons).forEach(button => {
