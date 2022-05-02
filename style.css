@@ -12,6 +12,7 @@ html {
     --main-accent-color: #00494D;
     --main-lighter-accent-color: #20A291;
     --input-background-color: #F4FAFA;
+    --input-icon-color: #9EBBBD;
 
     --border-radius-large: 20px;
     --border-radius-small: 7px;
@@ -66,7 +67,11 @@ form {
 }
 
 
-.input-group>input {
+.input-group>div {
+    width: 100%;
+}
+.input-group>div>input {
+    width: 100%;
     font-size: x-large;
     line-height: 1.5;
     color: var(--main-accent-color);
@@ -77,7 +82,17 @@ form {
     text-align: right;
 }
 
-.input-group>input:focus {
+.input-icons i {
+    position:absolute;
+}
+.icon {
+    padding: 10px;
+    color: var(--input-icon-color);
+    min-width: 50px;
+    text-align: center
+}
+
+.input-group>div>input:focus {
     border-color: var(--main-lighter-accent-color);
 }
 
