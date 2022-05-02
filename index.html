@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tip Calculator</title>
     <link rel="stylesheet" href="style.css" />
+    <link rel="shortcut icon" href="./images/favicon-32x32.png" type="image/x-icon">
     <link rel="stylesheet"
           href=
 "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -14,50 +15,56 @@
   </head>
 
   <body>
-    <header><img src="images/logo.svg" alt=""></header>
+    <header><img src="images/logo.svg" alt="logo-icon"></header>
     <main class="container">
         <form>
             <div id="tip-inputs">
                 <div class="input-group" id="bill-container">
                     <label for="bill-amount">Bill</label>
                     <div class="input-icons">
-                        <img class="icon" src="images/icon-dollar.svg"></i>
+                        <img alt="dollar-icon" class="icon" src="images/icon-dollar.svg">
                         <input
-                        type="text"
+                        type="number"
                         placeholder="0"
                         min="0"
                         name="bill-amount"
                         id="bill-amount"
                         autocomplete="off"
+                        oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');"
                         >          
                     </div>
 
                 </div>
                 <div id="tip-percentage-container">
-                    <label for="">Select Tip %</label>
+                    <label>Select Tip %</label>
                     <div id="tip-button-container">
                         <button class="tip-button" value="5" >5%</button>
                         <button class="tip-button" value="10" >10%</button>
                         <button class="tip-button" value="15" >15%</button>
                         <button class="tip-button" value="25" >25%</button>
                         <button class="tip-button" value="50" >50%</button>
-                        <button id="custom-tip-button">
-                            <input type="text" id="custom-tip-input" placeholder="Custom"
-                            autocomplete="off">
-                        </button>
+                        <input
+                        type="number" 
+                        id="custom-tip-input" 
+                        placeholder="Custom"
+                        autocomplete="off"
+                        oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');"
+                        >
                     </div>
                 </div>
                 <div class="input-group" id="num-people-container">
-                    <label for="">Number of People</label>
+                    <label for="people-amount">Number of People</label>
                     <div class="input-icons">
-                        <img class="icon" src="images/icon-person.svg"></i>
+                        <img alt="person-icon" class="icon" src="images/icon-person.svg">
                         <input 
-                        type="text"
+                        type="number"
                         placeholder="1"
                         min="1"
                         name="people-amount"
                         id="people-amount"
-                        autocomplete="off" />
+                        autocomplete="off"
+                        oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');"
+                        >
                     </div>
 
                 </div>

@@ -32,15 +32,18 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
     min-width: 320px;
     color: var(--text-color);
 }
 
+header {
+    margin-bottom: 3%;
+}
+
 main {
-    width: max(50%, 768px);
-    margin: auto, 0;
+    width: max(55%, 768px);
     background-color: var(--main-bg-color);
 }
 
@@ -148,6 +151,19 @@ form {
     text-align: center;
 }
 
+/* Remove arrows */
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
 #custom-tip-input:focus {
     outline: none !important;
     border: 1px solid var(--main-lighter-accent-color);
@@ -213,7 +229,7 @@ button {
 
 
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
 
     header {
         margin: 50px 0;
@@ -222,6 +238,7 @@ button {
     .container {
         width: 100vw;
         padding: 30px 15px 30px 15px;
+        margin-top: 0;
     }
 
     form {
