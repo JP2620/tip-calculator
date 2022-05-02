@@ -42,12 +42,6 @@ const update = () => {
     setTipPerPerson();
 }
 
-document.onreadystatechange = function () {
-    if (document.readyState == "complete") {
-        update();
-  }
-}
-
 const handleBillChange = (event) => {
     let value = event.target.value;
     bill = value === "" ? 0 : parseFloat(value);
