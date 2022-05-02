@@ -1,5 +1,5 @@
 var bill = 0;
-var tipPercentage = 10;
+var tipPercentage = 0;
 var peopleAmount = 1;
 var tipPerPerson = 0;
 var totalPerPerson = 0;
@@ -71,11 +71,24 @@ document.onreadystatechange = function () {
         let peopleAmountInput = document.getElementById("people-amount");
         let resetButton = document.getElementById("reset-button");
         let tipButtons = document.getElementsByClassName("tip-button");
+        let customTipButton = document.getElementById("custom-tip-button");
+        let customTipInput = document.getElementById("custom-tip-input");
 
         billInput.addEventListener("input", handleBillChange);
         peopleAmountInput.addEventListener("input", handlePeopleAmountChange);
         resetButton.addEventListener("click", handleReset);
-
+        customTipButton.addEventListener("click", (e) => e.preventDefault())
+        customTipInput.addEventListener("input", (e) => {
+            if(e.target.value === "") {
+                tipPercentage = 0;
+            } else {
+                tipPercentage = parseInt(e.target.value);
+            }
+            Array.from(tipButtons).forEach(button => {
+                button.classList.remove("active");
+            });
+            update();
+        });
 
         Array.from(tipButtons).forEach(button => {
             button.addEventListener("click", (e) => {
@@ -83,6 +96,7 @@ document.onreadystatechange = function () {
                 Array.from(tipButtons).forEach(button => {
                     button.classList.remove("active");
                 });
+                customTipInput.value = "";
                 button.classList.add("active");
                 tipPercentage = parseInt(e.target.value);
                 update();
