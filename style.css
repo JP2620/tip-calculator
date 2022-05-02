@@ -1,10 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Azeret+Mono&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap');
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: 'Azeret Mono', monospace;
+    font-family: 'Space Mono', monospace;
     font-weight: 700;
   }
 
@@ -15,6 +14,7 @@ html {
     --main-lighter-accent-color: #20A291;
     --input-background-color: #F4FAFA;
     --input-icon-color: #9EBBBD;
+    --text-color: hsl(184, 14%, 56%);
 
     --border-radius-large: 20px;
     --border-radius-small: 5px;
@@ -28,17 +28,18 @@ html {
 
 body {
     background-color: var(--bg-color);
-    font-size: x-large;
+    font-size: var(--font-size-medium);
     min-height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     min-width: 320px;
+    color: var(--text-color);
 }
 
 main {
-    width: max(40%, 768px);
+    width: max(50%, 768px);
     margin: auto;
     background-color: var(--main-bg-color);
 }
@@ -125,7 +126,7 @@ form {
     border-radius: var(--border-radius-small);
     background-color: var(--main-accent-color);
     color: var(--main-bg-color);
-    min-width: 110px;
+    min-width: 100px;
 }
 
 #custom-tip-button {
