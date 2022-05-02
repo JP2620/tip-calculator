@@ -50,12 +50,14 @@ document.onreadystatechange = function () {
 }
 
 const handleBillChange = (event) => {
-    bill = parseInt(event.target.value);
+    let value = event.target.value;
+    bill = value === "" ? 0 : parseFloat(value);
     update();
 }
 
 const handlePeopleAmountChange = (event) => {
-    peopleAmount = parseInt(event.target.value);
+    let value = event.target.value;
+    peopleAmount = value === "" ? 1 : parseInt(value);
     update();
 }
 
@@ -79,11 +81,7 @@ document.onreadystatechange = function () {
         resetButton.addEventListener("click", handleReset);
         customTipButton.addEventListener("click", (e) => e.preventDefault())
         customTipInput.addEventListener("input", (e) => {
-            if(e.target.value === "") {
-                tipPercentage = 0;
-            } else {
-                tipPercentage = parseInt(e.target.value);
-            }
+            tipPercentage = e.target.value === "" ? 0 : parseFloat(e.target.value);
             Array.from(tipButtons).forEach(button => {
                 button.classList.remove("active");
             });
