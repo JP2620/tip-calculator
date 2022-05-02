@@ -8,32 +8,31 @@ var totalPerPerson = 0;
 
 
 
-const calculateTip = () => {
-    tip = bill * tipPercentage / 100;
-    return tip;
+const calculateTip = (bill, tipPercentage) => {
+    return bill * tipPercentage / 100;
 }
 
-const calculateTipPerPerson = () => {
-    tipPerPerson = calculateTip() / peopleAmount;
+const calculateTipPerPerson = (bill, tipPercentage, peopleAmount) => {
+    tipPerPerson = calculateTip(bill, tipPercentage) / peopleAmount;
     return tipPerPerson;
 }
 
 const setTipPerPerson = () => {
-    tipPerPerson = calculateTipPerPerson();
+    tipPerPerson = calculateTipPerPerson(bill, tipPercentage, peopleAmount);
     document.getElementById("tip-per-person").innerHTML = 
         tipPerPerson.toFixed(2);
 }
 
-const calculateTotal = () => {
-    return bill + calculateTip();
+const calculateTotal = (bill, tipPercentage) => {
+    return bill + calculateTip(bill, tipPercentage);
 }
 
-const calculateTotalPerPerson = () => {
-    return calculateTotal() / peopleAmount;
+const calculateTotalPerPerson = (bill, tipPercentage, peopleAmount) => {
+    return calculateTotal(bill, tipPercentage) / peopleAmount;
 }
 
 const setTotalPerPerson = () => {
-    totalPerPerson = calculateTotalPerPerson();
+    totalPerPerson = calculateTotalPerPerson(bill, tipPercentage, peopleAmount);
     document.getElementById("total-per-person").innerHTML = 
         totalPerPerson.toFixed(2);
 }
@@ -69,12 +68,12 @@ const handleReset = () => {
 
 document.onreadystatechange = function () {
     if (document.readyState == "complete") {
-        let billInput = document.getElementById("bill-amount");
-        let peopleAmountInput = document.getElementById("people-amount");
-        let resetButton = document.getElementById("reset-button");
-        let tipButtons = document.getElementsByClassName("tip-button");
-        let customTipButton = document.getElementById("custom-tip-button");
-        let customTipInput = document.getElementById("custom-tip-input");
+        const billInput = document.getElementById("bill-amount");
+        const peopleAmountInput = document.getElementById("people-amount");
+        const resetButton = document.getElementById("reset-button");
+        const tipButtons = document.getElementsByClassName("tip-button");
+        const customTipButton = document.getElementById("custom-tip-button");
+        const customTipInput = document.getElementById("custom-tip-input");
 
         billInput.addEventListener("input", handleBillChange);
         peopleAmountInput.addEventListener("input", handlePeopleAmountChange);
